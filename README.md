@@ -13,4 +13,4 @@ To setup the bot, run DiscordTwitterBotSetup.py. This will ask you to enter Disc
 
 Once the bot is setup, run DiscordTwitterBot.py. It will use the login information entered in the Setup stage to login as the provided Discord user and Twitter user. To enable the bot in a Discord channel, the bot user must be connected to the channel. Then type "$addchannel @<Bot>" in that channel, replacing "@<Bot>" with a mention to the user. To start following a Twitter user, type "$follow <TwitterUser> @<Bot>", replacing "<TwitterUser>" with the name of the Twitter user you want to follow. Type "$help @<Bot>" to see more commands.
 
-This bot was written very quickly and could use a lot more features. Feel free to contribute changes or report bugs.
+This bot was written very quickly and could use a lot more features and some cleanup. Feel free to contribute changes or report bugs.
