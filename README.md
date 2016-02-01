@@ -3,9 +3,10 @@ A simple Python-based chat-configurable Discord bot which will live echo a Twitt
 
 The following dependencies are required:
 
-python 3+
-discord.py
-twython.py
+python 3+  
+discord.py  
+twython.py  
+python-dateutil  
 
 The bot must login to both a Twitter account and a Discord account to function. See the Twitter API for more info on obtaining the appropriate authentication keys.
 
