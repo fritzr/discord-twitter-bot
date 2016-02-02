@@ -367,6 +367,10 @@ as the given channel. If channel is None, show active channels from all servers.
         # Only read commands that we are mentioned in
         elif self.user.id not in [u.id for u in message.mentions]:
             return
+        # Only read commands from channels we are active in
+        elif message.channel.id not in [c.id for c in self.channels]:
+            if '$addchannel' not in lcontent:
+                return
 
         ## Parse commands in current channel
 
