@@ -10,7 +10,7 @@ discord.py (v0.9.2)
 twython (v3.3.0)  
 python-dateutil (v2.4.2)  
 
-The last three can be installed with pip or easy_install. Note that the Python Discord API changes frequently and makes little effort to hold backwards-compatibility, so you must use the release listed here (not a later version).
+The last three can be installed with pip or easy_install. Note that the Python Discord API changes frequently and makes little effort to hold backwards-compatibility, so you must use the release listed here (not a later version). An easy way to make sure you get the right version is to explicitly provide it to pip on install: `pip install discord.py==0.9.2`
 
 ## Setup
 
