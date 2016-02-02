@@ -508,8 +508,9 @@ Returns False if the user does not exist, True otherwise."""
         """Terminate the Twitter and Discord connections and exits the program."""
         self.send_all(self.pre+"Logging out.")
         self.logout()
-        self.stream.disconnect()
-        self.stream_thread.join() # still blocks for a long time
+        if self.stream_thread:
+            self.stream.disconnect()
+            self.stream_thread.join() # still blocks for a long time
         print("Done.")
         exit()
 
