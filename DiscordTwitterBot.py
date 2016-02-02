@@ -346,7 +346,7 @@ as the given channel. If channel is None, show active channels from all servers.
         # List the user mentions for the current channel
         mstr = ""
         if channel is not None:
-            for u in self.mentions[channel.id]:
+            for u in self.mentions.get(channel.id, ()):
                 mstr += "@" + u.name + ", "
         if mstr:
             mstr = mstr[:-2] # strip extra comma
