@@ -70,6 +70,7 @@ recent messages to store."""
         super(TwitterUserStream, self).__init__(*self.data.twitter)
         self.twitter = Twython(*self.data.twitter)
 
+        self.error = "" # text of last error
         self._errors = 0
         self._max_errors = 5
         self._show_dupes = show_dupes
@@ -156,8 +157,8 @@ or None if the user is invalid."""
         try:
             result = self.twitter.get("users/show", params={'screen_name':user})
             return result['id_str']
-        except TwythonError:
-            print('No such user @', user, '.', sep='')
+        except TwythonError as e:
+            self.on_error(e.error_code, e.msg)
         return None
     
     def follow(self, user=None, get_last=True):
@@ -262,8 +263,11 @@ enabled."""
             
     def on_error(self, code, data):
         """Called when there is an error. Disconnects from the stream after
-receiving too many errors."""
-        print("Twitter Error:", code, data)
+receiving too many errors. Sets the 'error' attribute to an appropriate error
+message."""
+        errmsg = ("Twitter Error: [{0}] {1}".format(code, data))
+        print(errmsg)
+        self.error = errmsg
         self._errors += 1
         if self._errors >= self._max_errors:
             print("Maximum number of errors exceeded, disconnecting...")
@@ -466,7 +470,7 @@ Returns False if the user does not exist, True otherwise."""
         # Make sure the user is valid
         if self.stream.get_user(tuser) is None:
             if src_channel is not None:
-                self.send_message(src_channel, self.pre+"No such user @"+tuser+".")
+                self.send_message(src_channel, self.pre+self.stream.error)
             return False
             
         # Stop previous thread, if any
