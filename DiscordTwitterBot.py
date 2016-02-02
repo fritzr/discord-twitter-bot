@@ -304,7 +304,7 @@ class TwitterBot(discord.Client):
         mention_str = ""
         for chan in self.channels:
             if mention:
-                mention = self.mentions[chan.id]
+                mention = self.mentions.get(chan.id, [])
                 mention_str = self.make_mentions(mention)
             self.send_message(chan, message + mention_str, mention)
             
