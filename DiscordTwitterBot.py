@@ -385,7 +385,10 @@ as the given channel. If channel is None, show active channels from all servers.
         # $last - show last tweet
         elif '$last' in lcontent:
             old_count = self.ntweets
-            self.tweet(self.stream.last(), True, False)
+            if self.stream.last():
+                self.tweet(self.stream.last(), True, False)
+            else:
+                self.send_message(message.channel, self.pre+"No tweet to display.")
             self.ntweets = old_count # not actually a new tweet
 
         # $top <N> - show last N tweets
