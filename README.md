@@ -14,7 +14,7 @@ The last three can be installed with pip or easy_install. Note that the Python D
 
 ## Setup
 
-The bot must login to both a Twitter account and a Discord account to function. See the Twitter API for more info on obtaining the appropriate authentication keys. I recommend using a dummy and Discord account (for example one named 'Twitter Bot') rather than your personal user account, because this application makes no effort to secure the login credentials you enter.
+The bot must login to both a Twitter account and a Discord account to function. See the Twitter API for more info on obtaining the appropriate authentication keys. I recommend using a dummy Discord account (for example one named 'Twitter Bot') rather than your personal user account, because this application makes no effort to secure the login credentials you enter.
 
 To setup the bot, run DiscordTwitterBotSetup.py. This will ask you to enter Discord and Twitter authentication information for a one-time setup. The entered information is stored directly into a file named 'data.pkl'. *DO NOT ENTER IMPORTANT PERSONAL ACCOUNT INFORMATION HERE*. This information is not secured or protected in any way.
 
