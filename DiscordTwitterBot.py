@@ -248,8 +248,6 @@ False otherwise."""
 underlying stream. Dispatches the message to all registered callbacks (in the
 order they were registered) if the message is not a duplicate or show_dupes is
 enabled."""
-        print("received data:", data)
-
         # Make sure this is a tweet we are interested in
         if not self._filter_tweet(data):
             return
