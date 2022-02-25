@@ -1,6 +1,9 @@
 # discord-twitter-bot
 A simple Python-based chat-configurable Discord bot which will live echo a Twitter user's tweets.
 
+NOTE: this bot is no longer maintained. PRs are welcome, but for a more updated approach use something like
+https://github.com/NNTin/discord-twitter-bot or https://mee6.xyz/tutorials/how-to-automatically-post-tweets-to-discord-using-mee6 instead.
+
 ## Prerequisites
 
 The following dependencies are required:
